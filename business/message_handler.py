@@ -18,7 +18,7 @@ class MessageHandler:
         self.client = client
 
     async def handle_message(self, message: Message):
-        if message.content[0] != '!':
+        if len(message.content) == 0 or message.content[0] != '!':
             return
 
         if message.author == self.client.user:
